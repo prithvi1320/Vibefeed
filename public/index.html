@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VibeFeed | Global Sentiment News</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="ticker-wrap" aria-label="Breaking news ticker">
+      <span class="ticker-label">Breaking</span>
+      <div class="ticker-track">
+        <div id="tickerText" class="ticker-text">Loading headlines...</div>
+      </div>
+    </div>
+
+    <div class="masthead">
+      <h1>VibeFeed</h1>
+      <p>Regional pulse of global news</p>
+    </div>
+
+    <nav class="top-nav" aria-label="Main navigation">
+      <button class="nav-link active" data-view="home">Home</button>
+      <button class="nav-link" data-view="positive">Positive</button>
+      <button class="nav-link" data-view="negative">Negative</button>
+      <button class="nav-link" data-view="neutral">Neutral</button>
+      <select id="regionSelect" aria-label="Select section order">
+        <option value="in" selected>India</option>
+        <option value="world">World</option>
+      </select>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <section class="controls" aria-label="Search controls">
+      <form id="searchForm">
+        <input id="searchInput" type="search" placeholder="Search India and World news..." aria-label="Search news" />
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <section id="loadingState" class="state hidden" aria-live="polite">
+      <div class="spinner"></div>
+      <p>Loading news...</p>
+    </section>
+
+    <section id="errorState" class="state hidden" aria-live="assertive">
+      <p id="errorText">Something went wrong.</p>
+      <button id="retryButton" type="button">Try Again</button>
+    </section>
+
+    <section id="newsSections" class="news-sections" aria-live="polite"></section>
+  </main>
+
+  <template id="newsCardTemplate">
+    <article class="news-card">
+      <img class="card-image" alt="News image" />
+      <div class="card-body">
+        <div class="card-top-row">
+          <span class="region-tag"></span>
+          <span class="sentiment-badge"></span>
+        </div>
+        <h2 class="headline"></h2>
+        <p class="description"></p>
+        <p class="source"></p>
+        <div class="vote-row">
+          <button class="vote-btn like-btn" type="button"><span class="vote-icon">&#128077;</span><span>Like</span></button>
+          <span class="vote-count like-count">0</span>
+          <button class="vote-btn dislike-btn" type="button"><span class="vote-icon">&#128078;</span><span>Dislike</span></button>
+          <span class="vote-count dislike-count">0</span>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>

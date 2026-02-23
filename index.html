@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1220" />
+  <title> Vibefeed — Fresh, Fast & Positive</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav" role="navigation" aria-label="Global">
+    <div class="container nav-inner">
+      <button class="brand" onclick="reload()" aria-label="Reload Vibefeed">Vibefeed</button>
+      <div class="search" role="search">
+        <input id="search-text" type="search" placeholder="Search news (e.g., AI, cricket, startups)" aria-label="Search news" />
+        <button id="search-button" aria-label="Search">Search</button>
+      </div>
+      <ul class="tabs" role="tablist" aria-label="Vibe filters">
+        <li class="tab" id="Positive" role="tab" tabindex="0" onclick="onNavItemClick('positive')">Positive</li>
+        <li class="tab" id="Negative" role="tab" tabindex="0" onclick="onNavItemClick('negative')">Negative</li>
+        <li class="tab" id="Neutral" role="tab" tabindex="0" onclick="onNavItemClick('Neutral')">Neutral</li>
+        <li class="tab" id="Sports" role="tab" tabindex="0" onclick="onNavItemClick('Sports')">Sports</li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="hero" aria-hidden="true">
+      <h1>Curate your vibe</h1>
+      <p>Filter the noise. Catch what matters. Fast.</p>
+    </header>
+
+    <div id="cards-container" class="grid"></div>
+  </main>
+
+  <template id="template-news-card">
+    <article class="card" aria-live="polite">
+      <div class="thumb">
+        <img id="news-img" alt="news-image" />
+        <span class="thumb-overlay"></span>
+      </div>
+      <div class="content">
+        <h3 id="news-title">Title</h3>
+        <p class="meta" id="news-source">Source • Date</p>
+        <p class="desc" id="news-desc">Description</p>
+        <button class="read-btn" id="read-btn" aria-label="Read full article">Read full article →</button>
+      </div>
+    </article>
+  </template>
+
+  <footer class="footer">
+    <div class="container">Built with ❤️ — API requests are proxied via your local server.</div>
+  </footer>
+
+  <button id="vf-chat-toggle" aria-label="Open chat widget">💬</button>
+
+  <div id="vf-chat" style="display: none;">
+    <div class="vf-chat-header">
+      <h4>Vibefeed AI Assistant</h4>
+      <button id="vf-chat-close" aria-label="Close chat widget">✕</button>
+    </div>
+    <div class="vf-chat-log" id="vf-chat-log">
+      <div class="vf-msg bot">Hello! I'm your Vibefeed AI Assistant. Ask me to summarize the news, or anything else!</div>
+    </div>
+    <form class="vf-chat-form" id="vf-chat-form">
+      <input type="text" id="vf-chat-input" placeholder="Ask a question..." autocomplete="off" required>
+      <button type="submit" aria-label="Send message">Send</button>
+    </form>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>
