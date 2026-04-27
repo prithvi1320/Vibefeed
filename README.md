@@ -45,9 +45,4 @@ Production-ready full-stack news platform with regional sentiment classification
 ## Vote Payload
 `POST /api/vote`
 
-```json
-{
-  "articleId": "<article-id>",
-  "voteType": "like"
-}
-```
+
