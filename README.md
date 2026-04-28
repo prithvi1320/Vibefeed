@@ -41,3 +41,5 @@ Production-ready full-stack news platform with regional sentiment classification
    - `npm run dev`
 5. Open:
    - `http://localhost:3000`
+   - ## Vote Payload
+`POST /api/vote`
