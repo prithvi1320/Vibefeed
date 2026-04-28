@@ -23,4 +23,9 @@ Production-ready full-stack news platform with regional sentiment classification
 - Mobile responsive design
 - Environment-based secrets
 
+## API Endpoints
+- `GET /api/news`
+- `GET /api/news/:sentiment`
+- `GET /api/news/region/:region`
+- `POST /api/vote`
 
