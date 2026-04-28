@@ -29,3 +29,15 @@ Production-ready full-stack news platform with regional sentiment classification
 - `GET /api/news/region/:region`
 - `POST /api/vote`
 
+## Setup
+1. Install dependencies:
+   - `npm install`
+2. Create env file:
+   - `copy .env.example .env`
+3. Update `.env` values:
+   - `MONGODB_URI`
+   - `NEWS_API_KEY`
+4. Start app:
+   - `npm run dev`
+5. Open:
+   - `http://localhost:3000`
